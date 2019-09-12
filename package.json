@@ -1,0 +1,33 @@
+{
+  "name": "regrapdf",
+  "version": "1.0.0",
+  "description": "GraphQL powered PDF Generation",
+  "main": "dist/server.js",
+  "private": true,
+  "scripts": {
+    "build": "babel ./src -d ./dist",
+    "dev": "nodemon --exec babel-node src/server.js",
+    "start": "node ./dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christoph Benjamin Weber",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "nodemon": "^1.19.2",
+    "prettier": "^1.18.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^1.6.4",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
