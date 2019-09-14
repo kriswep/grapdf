@@ -32,22 +32,31 @@ const resolvers = {
 
       // const instance = pdf(MyDoc);
       // const blob = instance.toString();
-      // const blob = await getBuffer('My awesome GraphQL text');
+      // const blob = await getBufferString('My awesome GraphQL text');
       // console.log(blob);
 
-      await ReactPDF.render(
-        <Document text="My awesome Text" />,
-        `${__dirname}/example.pdf`,
-      );
-      const blob = await readFile(`${__dirname}/example.pdf`, 'UTF-8');
-      console.log(blob);
+      // await ReactPDF.render(
+      //   <Document text="My awesome Text" />,
+      //   `${__dirname}/example.pdf`,
+      // );
+      // const blob = await readFile(`${__dirname}/example.pdf`, 'UTF-8');
+      // console.log(blob);
+
+      const blob = await getBufferBase64('My awesome GraphQL text');
 
       return { blob };
     },
   },
 };
 
-const getBuffer = async text => {
+/*
+  var link2 = document.createElement('a');
+  link2.href = data.document.blob;
+  link2.download="file.pdf";
+  link2.click();
+*/
+
+const getBufferString = async text => {
   const stream = await ReactPDF.renderToStream(<Document />);
 
   return new Promise(function(resolve, reject) {
@@ -60,6 +69,22 @@ const getBuffer = async text => {
     stream.on('end', () => {
       // resolve(Buffer.concat(buffers));
       resolve(string);
+    });
+    stream.on('error', reject);
+  });
+};
+
+const getBufferBase64 = async text => {
+  const stream = await ReactPDF.renderToStream(<Document text={text} />);
+
+  return new Promise(function(resolve, reject) {
+    const buffers = [];
+    stream.on('data', data => {
+      buffers.push(data);
+    });
+    stream.on('end', () => {
+      const result = Buffer.concat(buffers);
+      resolve('data:application/pdf;base64,' + result.toString('base64'));
     });
     stream.on('error', reject);
   });
