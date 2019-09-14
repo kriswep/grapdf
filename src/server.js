@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactPDF, { pdf } from '@react-pdf/renderer';
-
 import Document from './Document';
+import fs from 'fs';
+const { promisify } = require('util');
+
+const readFile = promisify(fs.readFile);
 
 const { ApolloServer, gql } = require('apollo-server');
 
@@ -25,12 +28,41 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     document: async () => {
-      const MyDoc = <Document />;
-      const instance = await pdf(MyDoc); //.toBlob();
-      const blob = await instance.toString();
+      // const MyDoc = <Document text="My awesome GraphQL text" />;
+
+      // const instance = pdf(MyDoc);
+      // const blob = instance.toString();
+      // const blob = await getBuffer('My awesome GraphQL text');
+      // console.log(blob);
+
+      await ReactPDF.render(
+        <Document text="My awesome Text" />,
+        `${__dirname}/example.pdf`,
+      );
+      const blob = await readFile(`${__dirname}/example.pdf`, 'UTF-8');
+      console.log(blob);
+
       return { blob };
     },
   },
+};
+
+const getBuffer = async text => {
+  const stream = await ReactPDF.renderToStream(<Document />);
+
+  return new Promise(function(resolve, reject) {
+    // const buffers = [];
+    let string = '';
+    stream.on('data', data => {
+      // buffers.push(data);
+      string += data.toString();
+    });
+    stream.on('end', () => {
+      // resolve(Buffer.concat(buffers));
+      resolve(string);
+    });
+    stream.on('error', reject);
+  });
 };
 
 // The ApolloServer constructor requires two parameters: your schema
@@ -42,4 +74,7 @@ server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
 
-ReactPDF.render(<Document />, `${__dirname}/example.pdf`);
+// ReactPDF.render(
+//   <Document text="My awesome Text" />,
+//   `${__dirname}/example.pdf`,
+// );
