@@ -26,12 +26,12 @@
     "@babel/node": "7.6.2",
     "@babel/preset-env": "7.6.2",
     "@babel/preset-react": "7.0.0",
-    "babel-jest": "^24.9.0",
-    "isomorphic-fetch": "^2.2.1",
-    "jest": "^24.9.0",
+    "babel-jest": "24.9.0",
+    "isomorphic-fetch": "2.2.1",
+    "jest": "24.9.0",
     "nodemon": "1.19.4",
     "prettier": "1.18.2",
-    "start-server-and-test": "^1.10.6"
+    "start-server-and-test": "1.10.6"
   },
   "prettier": {
     "singleQuote": true,
