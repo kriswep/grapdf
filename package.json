@@ -8,7 +8,8 @@
     "build": "babel ./src -d ./dist",
     "dev": "nodemon --exec babel-node src/server.js",
     "start": "node ./dist/server.js",
-    "test": "jest"
+    "test": "jest --watch",
+    "test:ci": "start-server-and-test start tcp:4000 jest"
   },
   "author": "Christoph Benjamin Weber",
   "license": "MIT",
@@ -29,7 +30,8 @@
     "isomorphic-fetch": "^2.2.1",
     "jest": "^24.9.0",
     "nodemon": "1.19.4",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "start-server-and-test": "^1.10.6"
   },
   "prettier": {
     "singleQuote": true,
