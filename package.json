@@ -8,7 +8,7 @@
     "build": "babel ./src -d ./dist",
     "dev": "nodemon --exec babel-node src/server.js",
     "start": "node ./dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Christoph Benjamin Weber",
   "license": "MIT",
@@ -25,6 +25,9 @@
     "@babel/node": "7.6.2",
     "@babel/preset-env": "7.6.2",
     "@babel/preset-react": "7.0.0",
+    "babel-jest": "^24.9.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jest": "^24.9.0",
     "nodemon": "1.19.4",
     "prettier": "1.18.2"
   },
