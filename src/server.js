@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactPDF, { pdf } from '@react-pdf/renderer';
 import Document from './Document';
-import fs from 'fs';
-const { promisify } = require('util');
-
-const readFile = promisify(fs.readFile);
 
 const { ApolloServer, gql } = require('apollo-server');
 
@@ -12,8 +8,6 @@ const { ApolloServer, gql } = require('apollo-server');
 // that together define the "shape" of queries that are executed against
 // your data.
 const typeDefs = gql`
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
-
   # The rendered pdf Document
   type Document {
     blob: String
@@ -21,61 +15,34 @@ const typeDefs = gql`
 
   # The "Query" type
   type Query {
-    document: Document
+    document(doc: [Text]): Document
+  }
+
+  input Text {
+    text: String
+    size: TextSize
+  }
+
+  enum TextSize {
+    SMALL
+    NORMAL
+    BIG
   }
 `;
 
 const resolvers = {
   Query: {
-    document: async () => {
-      // const MyDoc = <Document text="My awesome GraphQL text" />;
-
-      // const instance = pdf(MyDoc);
-      // const blob = instance.toString();
-      // const blob = await getBufferString('My awesome GraphQL text');
-      // console.log(blob);
-
-      // await ReactPDF.render(
-      //   <Document text="My awesome Text" />,
-      //   `${__dirname}/example.pdf`,
-      // );
-      // const blob = await readFile(`${__dirname}/example.pdf`, 'UTF-8');
-      // console.log(blob);
-
-      const blob = await getBufferBase64('My awesome GraphQL text');
+    document: async (obj, args, context, info) => {
+      const { doc } = args;
+      const blob = await getBufferBase64(doc);
 
       return { blob };
     },
   },
 };
 
-/*
-  var link2 = document.createElement('a');
-  link2.href = data.document.blob;
-  link2.download="file.pdf";
-  link2.click();
-*/
-
-const getBufferString = async text => {
-  const stream = await ReactPDF.renderToStream(<Document />);
-
-  return new Promise(function(resolve, reject) {
-    // const buffers = [];
-    let string = '';
-    stream.on('data', data => {
-      // buffers.push(data);
-      string += data.toString();
-    });
-    stream.on('end', () => {
-      // resolve(Buffer.concat(buffers));
-      resolve(string);
-    });
-    stream.on('error', reject);
-  });
-};
-
-const getBufferBase64 = async text => {
-  const stream = await ReactPDF.renderToStream(<Document text={text} />);
+const getBufferBase64 = async docs => {
+  const stream = await ReactPDF.renderToStream(<Document docs={docs} />);
 
   return new Promise(function(resolve, reject) {
     const buffers = [];
@@ -98,8 +65,3 @@ const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
-
-// ReactPDF.render(
-//   <Document text="My awesome Text" />,
-//   `${__dirname}/example.pdf`,
-// );

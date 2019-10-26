@@ -11,7 +11,13 @@
     <label for="query">Enter your Query! </label>
     <textarea rows="10" id="query">
 {
-  document {
+  document(
+    doc: [
+      { text: "BIG", size: BIG }
+      { text: "normal" }
+      { text: "small", size: SMALL }
+    ]
+  ) {
     blob
   }
 }</textarea
