@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactPDF, { pdf } from '@react-pdf/renderer';
 import Document from './Document';
+// import { Font } from '@react-pdf/renderer';
+
+// Font.registerHyphenationCallback(word => [word]);
 
 const { ApolloServer, gql } = require('apollo-server');
 
