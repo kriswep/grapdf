@@ -63,3 +63,6 @@ typings/
 
 dist
 example.pdf
+
+# Local Netlify folder
+.netlify

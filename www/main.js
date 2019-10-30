@@ -5,7 +5,7 @@
     'click',
     async e => {
       const textarea = document.getElementById('query');
-      const pdfBlob = await fetch('http://localhost:4000', {
+      const pdfBlob = await fetch('./.netlify/functions/grapdf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: textarea.value }),

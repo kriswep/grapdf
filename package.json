@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "build": "babel ./src -d ./dist",
+    "postbuild": "netlify-lambda build src/functions",
     "dev": "nodemon --exec babel-node src/server.js",
     "start": "node ./dist/server.js",
     "test": "jest --watch",
@@ -16,8 +17,10 @@
   "dependencies": {
     "@react-pdf/renderer": "1.6.7",
     "apollo-server": "2.9.7",
+    "apollo-server-lambda": "^2.9.7",
     "graphql": "14.5.8",
     "graphql-constraint-directive": "^1.4.1",
+    "netlify-lambda": "^1.6.3",
     "react": "16.11.0",
     "react-dom": "16.11.0"
   },
