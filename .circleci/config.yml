@@ -22,14 +22,7 @@ jobs: # a collection of steps
           paths:
             - ./node_modules
       - run:
-          name: Building
-          command: npm run build
-      - run:
           name: Running tests
           command: npm run test:ci
       - store_artifacts:
-          path: dist
-#      - store_artifacts:
-#          path: cypress/screenshots
-#      - store_artifacts:
-#          path: cypress/snapshots
+          path: .netlify
