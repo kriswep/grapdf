@@ -1,7 +1,7 @@
 import 'isomorphic-fetch';
 
 test('generate basic pdf', async () => {
-  const res = await fetch('http://localhost:4000', {
+  const res = await fetch('http://localhost:8888/.netlify/functions/grapdf', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query: '{ document{ blob } }' }),
