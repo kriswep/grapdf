@@ -5,6 +5,7 @@ import {
   gql,
   makeExecutableSchema,
   mergeSchemas,
+  ApolloError,
 } from 'apollo-server-lambda';
 import ConstraintDirective from 'graphql-constraint-directive';
 
@@ -41,6 +42,7 @@ const typeDefs = gql`
   # The "Query" type
   type Query {
     document(doc: [Text]): Document
+    error(code: Int): Document
   }
 
   input Text {
@@ -62,6 +64,15 @@ const resolvers = {
       const blob = await getBufferBase64(doc);
 
       return { blob };
+    },
+
+    error: async (obj, args, context, info) => {
+      let { code } = args;
+      if (!code) {
+        code = 400;
+      }
+
+      throw new ApolloError('An simple error', code);
     },
   },
 };
@@ -106,6 +117,36 @@ const schema = mergeSchemas({ schemas: [constraintSchema, BaseSchema] });
 // apollo with executable, full schema
 const server = new ApolloServer({
   schema,
+
+  formatResponse(body) {
+    if (body.errors) {
+      return {
+        ...body,
+        data: undefined,
+      };
+    }
+
+    return body;
+  },
+  plugins: [
+    {
+      requestDidStart() {
+        return {
+          didEncounterErrors({ response, errors }) {
+            if (
+              errors[0] &&
+              errors[0].extensions &&
+              errors[0].extensions.code
+            ) {
+              response.http.status = errors[0].extensions.code;
+            } else {
+              response.http.status = 400;
+            }
+          },
+        };
+      },
+    },
+  ],
 });
 
 const handler = server.createHandler();

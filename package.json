@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "netlify-lambda build src/functions",
-    "dev": "netlify dev",
+    "dev": "NODE_ENV=development netlify dev",
     "start": "netlify dev",
     "test": "jest --watch",
     "test:ci": "start-server-and-test start tcp:8888 jest"
