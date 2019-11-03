@@ -12,5 +12,5 @@ jobs: # a collection of steps
       - store_artifacts:
           path: .netlify
 orbs:
-  node: circleci/node@1.1
+  node: circleci/node@1.1.6
 version: 2.1
