@@ -8,21 +8,34 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     backgroundColor: '#E4E4E4',
   },
-  section: {
+  titleSection: {
+    margin: 10,
+    padding: 10,
+    flexBasis: '100%',
+  },
+  textSection: {
     margin: 10,
     padding: 10,
     flexGrow: 1,
   },
 });
-const textStyleFactory = (props = {}) =>
+const titleStyleFactory = (props = {}) =>
   StyleSheet.create({
     text: {
       fontSize:
         props.size === 'SMALL'
-          ? '8pt'
+          ? '16pt'
           : props.size === 'BIG'
-          ? '128pt'
-          : '16pt',
+          ? '32pt'
+          : '24pt',
+      fontWeight: 'bold',
+    },
+  });
+const textStyleFactory = (props = {}) =>
+  StyleSheet.create({
+    text: {
+      fontSize:
+        props.size === 'SMALL' ? '8pt' : props.size === 'BIG' ? '24pt' : '16pt',
     },
   });
 
@@ -32,13 +45,26 @@ const MyDocument = props => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {docs.map((doc, key) => {
-          const textStyles = textStyleFactory({ size: doc.size });
-          return (
-            <View style={styles.section} key={key}>
-              <Text style={textStyles.text}>{doc.text}</Text>
-            </View>
-          );
+        {docs.map((primitive, key) => {
+          if (primitive.title) {
+            const titleStyles = titleStyleFactory({
+              size: primitive.title.size,
+            });
+            return (
+              <View style={styles.titleSection} key={key}>
+                <Text style={titleStyles.text}>{primitive.title.text}</Text>
+              </View>
+            );
+          } else if (primitive.text) {
+            const textStyles = textStyleFactory({ size: primitive.text.size });
+            return (
+              <View style={styles.textSection} key={key}>
+                <Text style={textStyles.text}>{primitive.text.text}</Text>
+              </View>
+            );
+          } else {
+            return null;
+          }
         })}
       </Page>
     </Document>

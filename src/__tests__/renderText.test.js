@@ -6,7 +6,7 @@ test('generate dynamic pdf', async () => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       query:
-        '{ document(doc: [{ title: {text: "BIG", size: BIG} } { text: {text: "BIG", size: BIG} } { title: {text: "normal"} } { text: {text: "normal"} } { title: {text: "small", size: SMALL} } { text: {text: "small", size: SMALL} }]) { blob } }',
+        '{ document(doc: [{ text: {text: "BIG", size: BIG} } { text: {text: "normal"} } { text: {text: "small", size: SMALL} }]) { blob } }',
     }),
   });
   const { data } = await res.json();

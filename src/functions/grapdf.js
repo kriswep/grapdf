@@ -35,18 +35,28 @@ const typeDefs = gql`
   ) on INPUT_FIELD_DEFINITION
 
   # The rendered pdf Document
-  type Document {
+  type PDF {
     blob: String
   }
 
   # The "Query" type
   type Query {
-    document(doc: [Text]): Document
-    error(code: Int): Document
+    document(doc: [Document]): PDF
+    error(code: Int): PDF
+  }
+
+  input Document {
+    title: Title
+    text: Text
   }
 
   input Text {
-    text: String! @constraint(maxLength: 1001)
+    text: String! @constraint(maxLength: 1000)
+    size: TextSize
+  }
+
+  input Title {
+    text: String! @constraint(maxLength: 30)
     size: TextSize
   }
 
