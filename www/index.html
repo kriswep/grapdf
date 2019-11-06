@@ -13,9 +13,12 @@
 {
   document(
     doc: [
-      { text: "BIG", size: BIG }
-      { text: "normal" }
-      { text: "small", size: SMALL }
+      { title: { text: "Normal Title" } }
+      { text: { text: "Normal Text" } }
+      { title: { text: "Small Title", size: SMALL } }
+      { text: { text: "Small Text", size: SMALL } }
+      { title: { text: "Big Title", size: BIG } }
+      { text: { text: "Big Text", size: BIG } }
     ]
   ) {
     blob
