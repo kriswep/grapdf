@@ -1,5 +1,5 @@
 {
-  "name": "regrapdf",
+  "name": "grapdf",
   "version": "1.0.0",
   "description": "GraphQL powered PDF Generation",
   "main": "dist/server.js",
