@@ -31,7 +31,7 @@
     "babel-jest": "24.9.0",
     "isomorphic-fetch": "2.2.1",
     "jest": "24.9.0",
-    "netlify-cli": "2.24.0",
+    "netlify-cli": "2.25.0",
     "prettier": "1.19.1",
     "start-server-and-test": "1.10.6"
   },
