@@ -5,7 +5,8 @@
   "main": "dist/server.js",
   "private": true,
   "scripts": {
-    "build": "netlify-lambda build src/functions",
+    "prebuild": "cd www && npm install",
+    "build": "netlify-lambda build src/functions && cd www && npm run build",
     "dev": "NODE_ENV=development netlify dev",
     "start": "netlify dev",
     "test": "jest --watch",
