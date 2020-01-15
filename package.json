@@ -9,8 +9,8 @@
     "build": "netlify-lambda build src/functions && cd www && npm run build",
     "dev": "NODE_ENV=development netlify dev",
     "start": "netlify dev",
-    "test": "jest --watch",
-    "test:ci": "start-server-and-test start tcp:8888 jest"
+    "test": "jest --watch ./src",
+    "test:ci": "start-server-and-test start tcp:8888 'jest ./src'"
   },
   "author": "Christoph Benjamin Weber",
   "license": "MIT",
