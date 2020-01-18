@@ -8,9 +8,12 @@ import SEO from '../components/seo';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <h1>Generate your PDFs using our modern GraphQL API</h1>
+    <p>
+      Perfect for generating your PDF invoices, reports, contracts. Integrates
+      nicely in your stack, thanks to the nature of the provided GraphQL API.
+    </p>
+    <p>Developers will love it.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
