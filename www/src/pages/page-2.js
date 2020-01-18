@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const initialQuery = `{
   document(
@@ -17,15 +17,15 @@ const initialQuery = `{
   ) {
     blob
   }
-}`
+}`;
 
 const SecondPage = () => {
-  const [query, setQuery] = useState(initialQuery)
+  const [query, setQuery] = useState(initialQuery);
 
   const sendQuery = async evt => {
-    const pdfBlob = await fetch("/.netlify/functions/grapdf", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const pdfBlob = await fetch('/.netlify/functions/grapdf', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query }),
     })
       .then(res => console.log(res) || res.json())
@@ -38,22 +38,22 @@ const SecondPage = () => {
                   ? `${messages};
 ${currentError.message}`
                   : currentError.message,
-              ""
-            )
-          )
+              '',
+            ),
+          );
         }
 
-        return data.document.blob
+        return data.document.blob;
       })
       .catch(err => {
-        alert(`Error fetching: ${err.message}`)
-      })
-    if (!pdfBlob) return
-    const link = document.createElement("a")
-    link.href = pdfBlob
-    link.download = "file.pdf"
-    link.click()
-  }
+        alert(`Error fetching: ${err.message}`);
+      });
+    if (!pdfBlob) return;
+    const link = document.createElement('a');
+    link.href = pdfBlob;
+    link.download = 'file.pdf';
+    link.click();
+  };
 
   return (
     <Layout>
@@ -70,7 +70,7 @@ ${currentError.message}`
       <button onClick={sendQuery}>Get PDF</button>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
-  )
-}
+  );
+};
 
-export default SecondPage
+export default SecondPage;

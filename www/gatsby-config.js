@@ -5,8 +5,8 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   proxy: {
-    prefix: "/.netlify",
-    url: "http://localhost:8888",
+    prefix: '/.netlify',
+    url: 'http://localhost:8888',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,4 +35,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
