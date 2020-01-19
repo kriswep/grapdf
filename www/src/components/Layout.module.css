@@ -1,0 +1,9 @@
+.container {
+  padding: 0 2rem 1.45rem;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  color: #c0b7bc;
+}

@@ -1,0 +1,36 @@
+.heroContainer {
+  display: flex;
+  position: relative;
+  min-height: 18.75rem;
+}
+
+.heroText {
+  align-self: center;
+  max-width: 37.5rem;
+}
+
+.heroSplash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100% + (2 * 2rem));
+  height: 24.125rem;
+  z-index: -100;
+  margin-left: -2rem;
+  margin-top: -5.375rem;
+}
+.secondaryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+
+.secondaryText {
+  max-width: 37.5rem;
+  flex-basis: 37.5rem;
+}
+
+.illustration {
+  width: 18.75rem;
+}
