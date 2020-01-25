@@ -1,12 +1,15 @@
 .heroContainer {
   display: flex;
   position: relative;
-  min-height: 18.75rem;
+  padding-top: 6rem;
 }
 
 .heroText {
   align-self: center;
-  max-width: 37.5rem;
+  max-width: 45.5rem;
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: 0.2rem;
 }
 
 .heroSplash {
@@ -15,22 +18,125 @@
   left: 0;
   right: 0;
   width: calc(100% + (2 * 2rem));
-  height: 24.125rem;
+  height: 29.125rem;
   z-index: -100;
   margin-left: -2rem;
   margin-top: -5.375rem;
 }
+
 .secondaryContainer {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5rem;
+  justify-content: space-between;
+  margin-top: 7rem;
 }
 
 .secondaryText {
   max-width: 37.5rem;
   flex-basis: 37.5rem;
+  font-size: 1.125rem;
 }
 
 .illustration {
   width: 18.75rem;
+  position: relative;
+  top: -10rem;
+}
+
+@media (min-width: 80rem) {
+  .illustration {
+    margin-right: 10rem;
+  }
+}
+
+@media (max-width: 68.75rem) {
+  .heroContainer {
+    display: block;
+  }
+
+  .heroText {
+    max-width: 35.5rem;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .heroSplash {
+    height: 25rem;
+  }
+
+  .illustration {
+    position: initial;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 55rem) {
+  .heroContainer {
+    padding-top: 4.5rem;
+  }
+
+  .heroText {
+    max-width: 25rem;
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .heroSplash {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 38.75rem) {
+  .heroContainer {
+    padding-top: 4rem;
+  }
+
+  .heroText {
+    max-width: 20rem;
+    font-size: 1.5rem;
+  }
+
+  .heroSplash {
+    height: 18em;
+  }
+}
+
+@media (max-width: 27.5rem) {
+  .heroContainer {
+    padding-top: 3.5rem;
+  }
+
+  .heroText {
+    max-width: 12rem;
+  }
+}
+
+@media (max-width: 25rem) {
+  .heroText {
+    max-width: initial;
+  }
+
+  .heroSplash {
+    width: 200%;
+  }
+}
+
+@media (max-width: 18.75rem) {
+  .heroContainer {
+    padding-top: 2.5rem;
+  }
+
+  .heroSplash {
+    width: 450%;
+  }
+}
+
+@media (max-width: 13.75rem) {
+  .heroSplash {
+    display: none;
+  }
+
+  .secondaryContainer {
+    margin-top: 2rem;
+  }
 }
