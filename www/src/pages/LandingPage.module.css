@@ -35,6 +35,7 @@
   max-width: 37.5rem;
   flex-basis: 37.5rem;
   font-size: 1.125rem;
+  line-height: 1.3;
 }
 
 .illustration {
@@ -46,6 +47,35 @@
 @media (min-width: 80rem) {
   .illustration {
     margin-right: 10rem;
+  }
+}
+
+@media (min-width: 125rem) {
+  .heroContainer {
+    padding-top: 8rem;
+  }
+
+  .heroText {
+    max-width: 100rem;
+    line-height: 1.5;
+  }
+
+  .illustration {
+    width: 30rem;
+    margin: 0 20rem;
+  }
+
+  .secondaryText {
+    max-width: 100rem;
+    font-size: 3rem;
+    flex-grow: 1;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 200rem) {
+  .illustration {
+    width: 40rem;
   }
 }
 
