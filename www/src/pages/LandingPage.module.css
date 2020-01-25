@@ -112,31 +112,26 @@
 }
 
 @media (max-width: 25rem) {
+  .heroContainer {
+    margin-left: -2rem;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    width: 100vw;
+    background-color: #f0bad8;
+    transform: skew(0deg, -10deg);
+  }
+
   .heroText {
     max-width: initial;
+    margin: 2rem 0 0 0;
+    transform: skew(0deg, 10deg);
   }
 
-  .heroSplash {
-    width: 200%;
-  }
-}
-
-@media (max-width: 18.75rem) {
-  .heroContainer {
-    padding-top: 2.5rem;
-  }
-
-  .heroSplash {
-    width: 450%;
-  }
-}
-
-@media (max-width: 13.75rem) {
   .heroSplash {
     display: none;
   }
 
   .secondaryContainer {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 }
