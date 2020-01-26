@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `GraPDF`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Create PDFs from your data with an GraphQL API.`,
+    author: `@kriswep`,
+    siteUrl: `https://grapdf.com`,
   },
   proxy: {
     prefix: '/.netlify',

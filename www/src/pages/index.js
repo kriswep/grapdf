@@ -10,7 +10,7 @@ import Splash from '../images/Splash';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="GraPDF - API for PDFs" />
     <header className={styles.heroContainer}>
       <h1 className={styles.heroText}>
         Generate your PDFs using our modern GraphQL API
