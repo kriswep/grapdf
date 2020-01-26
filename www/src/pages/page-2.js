@@ -67,7 +67,9 @@ ${currentError.message}`
         value={query}
         onChange={evt => setQuery(evt.target.value)}
       />
-      <button onClick={sendQuery}>Get PDF</button>
+      <button onClick={sendQuery} style={{ display: 'block' }}>
+        Get PDF
+      </button>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   );

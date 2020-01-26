@@ -25,12 +25,19 @@ const IndexPage = () => (
           GraphQL API.
         </p>
         <p>Developers will love it.</p>
+        <a
+          href="https://buttondown.email/grapdf"
+          rel="noopener"
+          className={styles.cta}
+        >
+          Subscribe to stay updated
+        </a>
       </section>
       <div className={styles.illustration}>
         <Image />
       </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Link to="/page-2/">See a demo</Link>
   </Layout>
 );
 

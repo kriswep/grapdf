@@ -24,6 +24,26 @@
   margin-top: -5.375rem;
 }
 
+.cta {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f0bad8;
+  color: #000;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  font-weight: 900;
+  margin-bottom: 1.45rem;
+}
+
+.cta:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta:active {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .secondaryContainer {
   display: flex;
   flex-wrap: wrap;
