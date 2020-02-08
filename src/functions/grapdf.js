@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactPDF, { pdf } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
 import {
   ApolloServer,
   gql,
   makeExecutableSchema,
   mergeSchemas,
-  ApolloError,
 } from 'apollo-server-lambda';
 import ConstraintDirective from 'graphql-constraint-directive';
 
@@ -42,7 +41,6 @@ const typeDefs = gql`
   # The "Query" type
   type Query {
     document(doc: [Document]): PDF
-    error(code: Int): PDF
   }
 
   input Document {
@@ -74,15 +72,6 @@ const resolvers = {
       const blob = await getBufferBase64(doc);
 
       return { blob };
-    },
-
-    error: async (obj, args, context, info) => {
-      let { code } = args;
-      if (!code) {
-        code = 400;
-      }
-
-      throw new ApolloError('An simple error', code);
     },
   },
 };
@@ -127,7 +116,7 @@ const schema = mergeSchemas({ schemas: [constraintSchema, BaseSchema] });
 // apollo with executable, full schema
 const server = new ApolloServer({
   schema,
-
+  introspection: true,
   formatResponse(body) {
     if (body.errors) {
       return {

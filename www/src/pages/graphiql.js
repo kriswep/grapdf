@@ -124,7 +124,7 @@ class GraphiQLApp extends Component {
     const { query, schema } = this.state;
     return (
       <Layout>
-        <SEO title="Explore the GraPDF API" />
+        <SEO title="Explore the PDF API" />
         <div className="graphiql-container">
           <GraphiQLExplorer
             schema={schema}
