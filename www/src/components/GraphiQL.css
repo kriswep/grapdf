@@ -1,0 +1,4 @@
+.graphiql-container {
+  height: calc(100vh - 4rem - 1.45rem - 3rem);
+  width: calc(100vw - 4rem);
+}
