@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
+// import Image from '../components/image';
 import SEO from '../components/seo';
 import styles from './LandingPage.module.css';
 // import splash from '../images/splash.svg';
 import Splash from '../images/Splash';
+import Illustration from '../images/Illustration';
 
 const IndexPage = () => (
   <Layout>
@@ -33,8 +34,8 @@ const IndexPage = () => (
           Subscribe to stay updated
         </a>
       </section>
-      <div className={styles.illustration}>
-        <Image />
+      <div>
+        <Illustration className={styles.illustration} />
       </div>
     </div>
     <Link to="/page-2/">See a demo</Link>
