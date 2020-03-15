@@ -29,7 +29,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <>
         <main>{children}</main>
-        <footer className={styles.footerContainer}>Coming soon...</footer>
       </>
     </div>
   );
