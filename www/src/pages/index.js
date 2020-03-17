@@ -8,6 +8,9 @@ import styles from './LandingPage.module.css';
 // import splash from '../images/splash.svg';
 import Splash from '../images/Splash';
 import Illustration from '../images/Illustration';
+import Globe from '../images/Globe';
+import Sparkles from '../images/Sparkles';
+import Code from '../images/Code';
 
 const IndexPage = () => (
   <Layout>
@@ -42,6 +45,11 @@ const IndexPage = () => (
       <div className={styles.featureList}>
         <section className={styles.featureCard}>
           <h2 className={styles.featureHeader}>Use anywhere</h2>
+          <div className={styles.featureIconContainer}>
+            <div className={styles.featureIcon}>
+              <Globe />
+            </div>
+          </div>
           <p className={styles.featureText}>
             Non nunc, malesuada mauris in. Platea risus fames auctor mauris cras
             vitae. Ultrices ullamcorper faucibus facilisis lacus, dictumst
@@ -51,27 +59,39 @@ const IndexPage = () => (
         </section>
         <section className={styles.featureCard}>
           <h2 className={styles.featureHeader}>Flexible templates</h2>
+          <div className={styles.featureIconContainer}>
+            <div className={styles.featureIcon}>
+              <Sparkles />
+            </div>
+          </div>
           <p className={styles.featureText}>
-            Non nunc, malesuada mauris in. Platea risus fames auctor mauris cras
-            vitae. Ultrices ullamcorper faucibus facilisis lacus, dictumst
-            congue habitant amet, bibendum. Sed dolor vitae eu purus amet
-            pharetra ut. Venenatis sit eget ut ultrices nunc dui.
+            Platea risus fames auctor mauris cras vitae. Ultrices ullamcorper
+            faucibus facilisis lacus, dictumst congue habitant amet, bibendum.
+            Sed dolor vitae eu purus amet pharetra ut. Venenatis sit eget ut
+            ultrices nunc dui. Non nunc, malesuada mauris in.
           </p>
         </section>
         <section className={styles.featureCard}>
           <h2 className={styles.featureHeader}>Any language</h2>
+          <div className={styles.featureIconContainer}>
+            <div className={styles.featureIcon}>
+              <Code />
+            </div>
+          </div>
           <p className={styles.featureText}>
-            Non nunc, malesuada mauris in. Platea risus fames auctor mauris cras
-            vitae. Ultrices ullamcorper faucibus facilisis lacus, dictumst
-            congue habitant amet, bibendum. Sed dolor vitae eu purus amet
-            pharetra ut. Venenatis sit eget ut ultrices nunc dui.
+            Ultrices ullamcorper faucibus facilisis lacus, dictumst congue
+            habitant amet, bibendum. Sed dolor vitae eu purus amet pharetra ut.
+            Venenatis sit eget ut ultrices nunc dui. Non nunc, malesuada mauris
+            in. Platea risus fames auctor mauris cras vitae.
           </p>
         </section>
       </div>
     </div>
 
     <footer className={styles.footerContainer}>
-      <Link to="/page-2/">See a demo</Link>{' '}
+      <p className={styles.footerPrimary}>
+        GraPDF - The API for PDFs - <Link to="/page-2/">See a demo</Link>
+      </p>
       <span className={styles.footerSecondary}>Coming soon...</span>
     </footer>
   </Layout>
