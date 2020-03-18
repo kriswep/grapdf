@@ -57,8 +57,8 @@ const IndexPage = () => (
           </p>
           <p className={styles.featureText}>
             Unlike other services, we don't need a HTML page or any other
-            presentation layer to 'photgraph' it. Send your data over, structure
-            it as you need, and we generate your PDF.
+            presentation layer to 'photograph' it. Send your data over,
+            structure it as you need, and we generate your PDF.
           </p>
         </section>
         <section className={styles.featureCard}>
@@ -93,8 +93,8 @@ const IndexPage = () => (
             Frameworks do it.
           </p>
           <p className={styles.featureText}>
-            Also, thanks to GraphQL tooling, the API is explorable and
-            understandable.
+            Also, thanks to the awesome GraphQL tooling, our API is explorable
+            and understandable.
           </p>
         </section>
       </div>
