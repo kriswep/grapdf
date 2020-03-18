@@ -27,11 +27,12 @@
 .cta {
   display: inline-block;
   text-decoration: none;
-  background-color: #f0bad8;
+  background-color: #dbf9ea;
   color: #000;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18); */
+  box-shadow: none;
   font-weight: 900;
   margin-bottom: 1.45rem;
 }
@@ -62,6 +63,89 @@
   width: 18.75rem;
   position: relative;
   top: -10rem;
+}
+
+.featureContainer {
+  background-color: #69f0ae;
+  margin: 0 -2rem;
+  clip-path: polygon(0 4rem, 100% 0, 100% 100%, 0 100%);
+}
+
+.featureList {
+  padding: 8rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  grid-gap: 2rem;
+}
+
+.featureCard {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #dbf9ea;
+  border-radius: 0.75rem;
+
+  padding: 1rem;
+}
+
+.featureHeader {
+  font-size: 1.5rem;
+  align-self: center;
+  margin: 1rem 0;
+}
+
+.featureText {
+  font-size: 1.125rem;
+  margin: 1rem 0 0 0;
+}
+
+.featureIconContainer {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featureIcon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #69f0ae;
+  border-radius: 50%;
+}
+
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2rem;
+  padding: 2rem;
+  justify-content: space-between;
+  background-color: #143022;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.footerContainer a {
+  color: #fff;
+}
+
+.footerPrimary {
+  margin: 0;
+  padding: 0.25rem 0.25rem 0.25rem 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.footerSecondary {
+  padding: 0.25rem 0 0.25rem 0.25rem;
+  color: #c0b7bc;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-left: auto;
 }
 
 @media (min-width: 80rem) {
@@ -167,7 +251,7 @@
     padding: 2.5rem 2rem;
     width: 100%;
     width: 100vw;
-    background-color: #f0bad8;
+    background-color: #dbf9ea;
     transform: skew(0deg, -10deg);
   }
 
