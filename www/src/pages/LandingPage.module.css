@@ -81,6 +81,7 @@
 .featureCard {
   display: flex;
   justify-content: center;
+  align-content: flex-start;
   flex-wrap: wrap;
   background-color: #dbf9ea;
   border-radius: 0.75rem;

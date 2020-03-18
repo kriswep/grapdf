@@ -44,45 +44,57 @@ const IndexPage = () => (
     <div className={styles.featureContainer}>
       <div className={styles.featureList}>
         <section className={styles.featureCard}>
-          <h2 className={styles.featureHeader}>Use anywhere</h2>
-          <div className={styles.featureIconContainer}>
-            <div className={styles.featureIcon}>
-              <Globe />
-            </div>
-          </div>
-          <p className={styles.featureText}>
-            Non nunc, malesuada mauris in. Platea risus fames auctor mauris cras
-            vitae. Ultrices ullamcorper faucibus facilisis lacus, dictumst
-            congue habitant amet, bibendum. Sed dolor vitae eu purus amet
-            pharetra ut. Venenatis sit eget ut ultrices nunc dui.
-          </p>
-        </section>
-        <section className={styles.featureCard}>
-          <h2 className={styles.featureHeader}>Flexible templates</h2>
-          <div className={styles.featureIconContainer}>
-            <div className={styles.featureIcon}>
-              <Sparkles />
-            </div>
-          </div>
-          <p className={styles.featureText}>
-            Platea risus fames auctor mauris cras vitae. Ultrices ullamcorper
-            faucibus facilisis lacus, dictumst congue habitant amet, bibendum.
-            Sed dolor vitae eu purus amet pharetra ut. Venenatis sit eget ut
-            ultrices nunc dui. Non nunc, malesuada mauris in.
-          </p>
-        </section>
-        <section className={styles.featureCard}>
-          <h2 className={styles.featureHeader}>Any language</h2>
+          <h2 className={styles.featureHeader}>Bring your data</h2>
           <div className={styles.featureIconContainer}>
             <div className={styles.featureIcon}>
               <Code />
             </div>
           </div>
           <p className={styles.featureText}>
-            Ultrices ullamcorper faucibus facilisis lacus, dictumst congue
-            habitant amet, bibendum. Sed dolor vitae eu purus amet pharetra ut.
-            Venenatis sit eget ut ultrices nunc dui. Non nunc, malesuada mauris
-            in. Platea risus fames auctor mauris cras vitae.
+            Want to generate a PDF directly from your data layer? That's exactly
+            what GraPDF excels at. Use the provided GraphQL API and get the
+            corresponding PDF back.
+          </p>
+          <p className={styles.featureText}>
+            Unlike other services, we don't need a HTML page or any other
+            presentation layer to 'photgraph' it. Send your data over, structure
+            it as you need, and we generate your PDF.
+          </p>
+        </section>
+        <section className={styles.featureCard}>
+          <h2 className={styles.featureHeader}>Use Anywhere</h2>
+          <div className={styles.featureIconContainer}>
+            <div className={styles.featureIcon}>
+              <Globe />
+            </div>
+          </div>
+          <p className={styles.featureText}>
+            Doing Frontend work? Backend Work? PHP, Java, Go, Ruby, Python,
+            JavaScript, Typescript, WebAssembly or something else? No matter
+            what, if you can send a HTTP request you can use GraPDF to generate
+            your next PDF.
+          </p>
+          <p className={styles.featureText}>
+            Although we use GraphQL as the API layer, you don't need a full
+            fledged GraphQL client. If you already use one, that's fine too.
+          </p>
+        </section>
+        <section className={styles.featureCard}>
+          <h2 className={styles.featureHeader}>Components Over Templates</h2>
+          <div className={styles.featureIconContainer}>
+            <div className={styles.featureIcon}>
+              <Sparkles />
+            </div>
+          </div>
+          <p className={styles.featureText}>
+            Instead of defining some rigid templates and hoping, they're right
+            for your use case, GraPDF comes with a set of reusable and
+            adjustable components. Almost the way some famous Frontend
+            Frameworks do it.
+          </p>
+          <p className={styles.featureText}>
+            Also, thanks to GraphQL tooling, the API is explorable and
+            understandable.
           </p>
         </section>
       </div>
