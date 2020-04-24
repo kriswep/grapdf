@@ -22,6 +22,8 @@
   #functionsPort = 34567 # port for functions server
   #functionsPort = 4000 # port for functions server
   #targetPort = 3000 # Port of target app server
+  publish = "www/public/"
+  #autoLaunch = true
 
 [[plugins]]
 package = "netlify-plugin-gatsby-cache"
