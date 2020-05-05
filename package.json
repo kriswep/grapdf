@@ -31,7 +31,7 @@
     "@babel/preset-react": "7.9.4",
     "babel-jest": "25.5.1",
     "isomorphic-fetch": "2.2.1",
-    "jest": "25.5.1",
+    "jest": "25.5.4",
     "netlify-cli": "2.48.0",
     "prettier": "2.0.5",
     "start-server-and-test": "1.11.0"
