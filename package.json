@@ -29,9 +29,9 @@
     "@babel/node": "7.8.7",
     "@babel/preset-env": "7.9.6",
     "@babel/preset-react": "7.9.4",
-    "babel-jest": "25.5.1",
+    "babel-jest": "26.0.1",
     "isomorphic-fetch": "2.2.1",
-    "jest": "25.5.4",
+    "jest": "26.0.1",
     "netlify-cli": "2.48.0",
     "prettier": "2.0.5",
     "start-server-and-test": "1.11.0"
