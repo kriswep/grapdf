@@ -18,7 +18,7 @@
     "@react-pdf/renderer": "1.6.8",
     "apollo-server-lambda": "2.13.1",
     "graphql": "14.6.0",
-    "graphql-constraint-directive": "1.4.1",
+    "graphql-constraint-directive": "2.0.0",
     "netlify-lambda": "1.6.3",
     "react": "16.13.1",
     "react-dom": "16.13.1"
