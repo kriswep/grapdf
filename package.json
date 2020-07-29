@@ -19,7 +19,7 @@
     "apollo-server-lambda": "2.16.0",
     "graphql": "14.7.0",
     "graphql-constraint-directive": "1.4.1",
-    "netlify-lambda": "1.6.3",
+    "netlify-lambda": "2.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
