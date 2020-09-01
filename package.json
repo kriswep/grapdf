@@ -33,7 +33,7 @@
     "isomorphic-fetch": "2.2.1",
     "jest": "26.4.2",
     "netlify-cli": "2.59.3",
-    "prettier": "2.0.5",
+    "prettier": "2.1.1",
     "start-server-and-test": "1.11.0"
   },
   "prettier": {
