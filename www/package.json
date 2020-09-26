@@ -14,7 +14,7 @@
     "gatsby-plugin-sharp": "2.6.36",
     "gatsby-source-filesystem": "2.3.30",
     "gatsby-transformer-sharp": "2.5.15",
-    "graphiql": "1.0.4",
+    "graphiql": "1.0.5",
     "graphiql-explorer": "0.6.2",
     "graphql": "14.7.0",
     "prop-types": "15.7.2",
