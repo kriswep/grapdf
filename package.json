@@ -20,8 +20,8 @@
     "graphql": "14.7.0",
     "graphql-constraint-directive": "1.4.1",
     "netlify-lambda": "2.0.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
   },
   "devDependencies": {
     "@babel/cli": "7.11.6",
