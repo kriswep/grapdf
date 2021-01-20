@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@react-pdf/renderer": "1.6.12",
-    "apollo-server-lambda": "2.19.1",
+    "apollo-server-lambda": "2.19.2",
     "graphql": "14.7.0",
     "graphql-constraint-directive": "1.4.1",
     "netlify-lambda": "2.0.3",
