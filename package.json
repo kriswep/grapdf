@@ -34,7 +34,7 @@
     "jest": "27.0.6",
     "netlify-cli": "3.2.3",
     "prettier": "2.3.2",
-    "start-server-and-test": "1.12.5"
+    "start-server-and-test": "1.12.6"
   },
   "prettier": {
     "singleQuote": true,
