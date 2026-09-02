@@ -15,7 +15,7 @@
   "author": "Christoph Benjamin Weber",
   "license": "MIT",
   "dependencies": {
-    "@react-pdf/renderer": "2.0.21",
+    "@react-pdf/renderer": "2.3.0",
     "apollo-server-lambda": "2.25.4",
     "graphql": "14.7.0",
     "graphql-constraint-directive": "1.4.1",
