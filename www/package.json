@@ -15,7 +15,7 @@
     "gatsby-source-filesystem": "2.11.1",
     "gatsby-transformer-sharp": "4.18.1",
     "graphiql": "1.9.9",
-    "graphiql-explorer": "0.6.3",
+    "graphiql-explorer": "0.9.0",
     "graphql": "14.7.0",
     "prop-types": "15.7.2",
     "react": "17.0.2",
